@@ -1,0 +1,31 @@
+:root {
+    --color-fondo: #FFF7D3;
+    --color-superficie: #E3BBDF;
+    --color-lavanda: #F3ABCC;
+    --color-borde: #BBC1D0;
+    --color-acento: #874942;
+    --color-texto: #2E2A2B;
+    --radio: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px; line-height: 1.6;
+    background: var(--color-fondo); color: var(--color-texto);
+}
+a { color: var(--color-acento); text-decoration: none; }
+cd /c/xampp/htdocs/noelia-psicologia
+mkdir -p app/Core app/Controllers app/Models app/Enums app/ValueObjects resources/views public/assets/css
+
+cat > .gitignore <<'EOF'
+/vendor
+/node_modules
+.env
+.env.*
+!.env.example
+/storage/*.key
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
