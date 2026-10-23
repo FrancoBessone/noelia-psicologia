@@ -1,0 +1,42 @@
+CREATE TABLE IF NOT EXISTS settings (
+    `key` VARCHAR(80) NOT NULL PRIMARY KEY,
+    value VARCHAR(500) NOT NULL,
+    updated_by BIGINT UNSIGNED NULL,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Valores iniciales (INSERT IGNORE: no pisa cambios existentes)
+INSERT IGNORE INTO settings (`key`, value) VALUES
+('session_price', '30000'),
+('deposit_percent', '50'),
+('deposit_deadline_hours', '24'),
+('receipt_retention_days', '90'),
+('timezone', 'America/Argentina/Mendoza'),
+('slot_minutes', '60'),
+('first_booking_min_hours', '12'),
+('booking_min_hours', '2'),
+('booking_horizon_months', '3'),
+('reminder_hours_before', '26'),
+('half_hour_slots', '0'),
+('show_public_price', '1'),
+('allow_disable_critical_confirmations', '0'),
+('modality_virtual_enabled', '1'),
+('modality_virtual_visible', '1'),
+('modality_presencial_enabled', '1'),
+('modality_presencial_visible', '1'),
+('privacy_text_version', 'pendiente'),
+('theme_bg', '#FFF7D3'),
+('theme_surface', '#E3BBDF'),
+('theme_accent_2', '#F3ABCC'),
+('theme_border', '#BBC1D0'),
+('theme_accent', '#874942'),
+('theme_text', '#2E2A2B'),
+('theme_default_bg', '#FFF7D3'),
+('theme_default_surface', '#E3BBDF'),
+('theme_default_accent_2', '#F3ABCC'),
+('theme_default_border', '#BBC1D0'),
+('theme_default_accent', '#874942'),
+('theme_default_text', '#2E2A2B'),
+('color_reserved', '#1F2A44'),
+('color_free', '#FFFFFF'),
+('color_unavailable', '#D9D9D9');
