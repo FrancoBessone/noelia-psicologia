@@ -7,6 +7,8 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8') ?></title>
+    <link rel="stylesheet" href="<?= $base ?>/assets/css/tema.css">
+    <style><?= \App\Core\Theme::cssRoot() ?></style>
     <link rel="stylesheet" href="<?= $base ?>/assets/css/app.css">
 </head>
 <body>
@@ -19,13 +21,11 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
         </nav>
     </div>
 </header>
-
 <main class="contenedor">
     <?= $contenido ?>
 </main>
-
 <footer class="pie">
-    <div class="contenedor">© 2026 Lic. Noelia Di Raimondo · Versión base de desarrollo</div>
+    <div class="contenedor">© 2026 Lic. Noelia Di Raimondo · Matrícula 6207</div>
 </footer>
 </body>
 </html>
